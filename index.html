@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculateSalary</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>calculateSalary</h1>
+    
+    <form action="wrapper">
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" name="gender" value="male">Male
+            <input type="radio" id="gender" name="gender" value="male">Female
+            <input type="radio" id="gender" name="gender" value="male">Other
+        </div>
+        <div>
+            <label for="greeting">Greeting</label>
+            <select name="greeting" id="greeting">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Doctor">Doctor</option>
+            </select>
+        </div>
+        <div>
+            <label for="subject">Subjects</label>
+            <input type="checkbox" id="subject" name="subject" value="HTML">HTML
+            <input type="checkbox" id="subject" name="subject" value="CSS">CSS
+            <input type="checkbox" id="subject" name="subject" value="JavaScript">JavaScript
+            <input type="checkbox" id="subject" name="subject" value="Angular">Angular
+            <input type="checkbox" id="subject" name="subject" value="VueJS">VueJS
+        </div>
+        <div>
+            <label for="working">Working</label>
+            <input type="checkbox" id="working" name="working">
+        </div>
+    </form>
+    
+    <!-- * labels for the title
+    * input elements for typing in a value
+    * radio button
+    * checkbox
+    * Additional label for the output
+    * buttons
+   - The user must be able to enter the following information:
+    * first name
+    * last name
+    * age
+    * date of birth
+    * Users must select their gender. (Male or Female)
+    * Greeting type: (Mr, Mrs, Miss, Doctor)
+    * Users can have several subjects. (HTML, CSS, JavaScript, Angular, VueJS)
+    * Ask the user if they are working; if so, a div will be displayed for them to provide their working hours and rate, and calculate the salary based on the tax_rate:
+    https://www.oldmutual.co.za/personal/tools-and-calculators/income-tax-calculator/
+    * If not, this div should be hidden.
+    * Before calculating the salary, ensure that all of the input elements are not empty; if one or more are empty, tell the user that this field is necessary.
+    * Check whether the user entered a positive or negative value. If it is a positive number, apply a green border color to the input element; otherwise, apply a red color.
+    * Check if the user was born on a leap year or not. Apply your style.
+    * Save all data in an array and load it into a local storage.
+    * Please make sure you style your project.
+    * Below is the format for the output:
+    Hello Dear Mr Mardoqueiro Dimbu, -->
+
+
+    <script srs="script.js"></script>
+</body>
+</html>
