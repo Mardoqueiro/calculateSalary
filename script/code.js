@@ -23,13 +23,70 @@
 //  * Below is the format for the output:
 //  Hello Dear Mr Mardoqueiro Dimbu,
 
-let output = document.getElementById("output");
-let firstName = document.getElementById("firstName");
-let lastName = document.getElementById("lastName");
-let age = document.getElementById("age");
-let dob = document.getElementById("dob");
-let gender = document.getElementsByName("gender");
-let greeting = document.getElementById("greeting");
-let subject = document.getElementsByName("subject");
-let working = document.getElementById("working");
-let salary = document.getElementById("salary");
+const form = document.querySelector('form');
+const output = document.querySelector('#output');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#firstName').value;
+  const surname = document.querySelector('#lastName').value;
+  const age = parseInt(document.querySelector('#age').value);
+  const dob = document.querySelector('#dob').value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const greeting = document.querySelector('#greeting').value;
+  const subjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(input => input.value);
+  const isWorking = document.querySelector('#working').checked;
+  const salary = parseInt(document.querySelector('#salary').value);
+  const taxRate = parseFloat(document.querySelector('#taxRate').value);
+
+  if (age <= 0) {
+    alert('Age cannot be negative');
+    return;
+  }
+
+  if (salary <= 0) {
+    alert('Salary cannot be negative');
+    return;
+  }
+
+  if (taxRate <= 0) {
+    alert('Tax rate cannot be negative');
+    return;
+  }
+
+  if (!name || !surname || !age || !dob || !gender || !greeting || !subjects || !isWorking || !salary || !taxRate) {
+    alert('Please fill in all required fields');
+    return;
+  }
+
+  if (age < 18) {
+    alert('You must be at least 18 years old');
+    return;
+  }
+
+  if (dob > new Date().toISOString().split('T')[0]) {
+    alert('Date of birth cannot be in the future');
+    return;
+  }
+
+  if (gender !== 'male' && gender !== 'female') {
+
+
+  const personData = {
+    name,
+    surname,
+    age,
+    dob,
+    gender,
+    greeting,
+    subjects,
+    isWorking,
+    salary,
+    taxRate
+  };
+
+  localStorage.setItem('data', JSON.stringify(personData));
+
+  output.innerHTML = `Hello Dear ${name} ${surname}, <br> Your salary is ${salary} <br> Thank you.`;
+)}
