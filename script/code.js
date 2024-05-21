@@ -71,6 +71,23 @@ form.addEventListener('submit', (event) => {
   }
 
   if (gender !== 'male' && gender !== 'female') {
+    alert('Invalid gender');
+    return;
+  }
+
+  if (greeting !== 'Mr' && greeting !== 'Mrs' && greeting !== 'Miss' && greeting !== 'Doctor') {
+    alert('Invalid greeting');
+    return;
+  }
+
+  if (subject === 'HTML' || subject === 'CSS' || subject === 'JavaScript' || subject === 'Angular' || subject === 'VueJS') {
+    alert ('Invalid subject');
+    return;
+  }
+
+  if (!isWorking) {
+    salary = 0;
+  }
 
 
   const personData = {
@@ -89,4 +106,9 @@ form.addEventListener('submit', (event) => {
   localStorage.setItem('data', JSON.stringify(personData));
 
   output.innerHTML = `Hello Dear ${name} ${surname}, <br> Your salary is ${salary} <br> Thank you.`;
-)}
+
+  form.reset();}
+
+  );
+  
+
